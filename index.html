@@ -1,55 +1,169 @@
-<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Big Shot Boxing</title><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://bigshotboxing.gitlab.io/"><link rel="alternate" type="application/atom+xml" href="https://bigshotboxing.gitlab.io/feed.xml"><link rel="alternate" type="application/json" href="https://bigshotboxing.gitlab.io/feed.json"><meta property="og:title" content="Big Shot Boxing"><meta property="og:site_name" content="Big Shot Boxing"><meta property="og:description" content=""><meta property="og:url" content="https://bigshotboxing.gitlab.io/"><meta property="og:type" content="website"><link rel="shortcut icon" href="https://bigshotboxing.gitlab.io/media/website/favicon-32x32-2.png" type="image/png"><link rel="stylesheet" href="https://bigshotboxing.gitlab.io/assets/css/style.css?v=d2371dfda16163cecac185d3a18bdb28"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"Big Shot Boxing","url":"https://bigshotboxing.gitlab.io/"}</script><noscript><style>img[loading] {
-                    opacity: 1;
-                }</style></noscript></head><body><div class="container"><header class="header" id="js-header"><a href="https://bigshotboxing.gitlab.io/" class="logo">Big Shot Boxing</a></header><main><div class="hero wrapper"><h1>Big Shot Boxing</h1><p><br><br></p><div id="container"><iframe width="600" height="500" onclick="goFullscreen('embededGame')" src="https://bigshotboxing.gitlab.io/iframe/big-shot-boxing.html" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="true" allowfullscreen="allowfullscreen"></iframe><div align="center"><button class="button">Full Screen</button></div></div><p><script>var button = document.querySelector('#container .button');
-button.addEventListener('click', fullscreen);
-// when you are in fullscreen, ESC and F11 may not be trigger by keydown listener. 
-// so don't use it to detect exit fullscreen
-document.addEventListener('keydown', function (e) {
-  console.log('key press' + e.keyCode);
-});
-// detect enter or exit fullscreen mode
-document.addEventListener('webkitfullscreenchange', fullscreenChange);
-document.addEventListener('mozfullscreenchange', fullscreenChange);
-document.addEventListener('fullscreenchange', fullscreenChange);
-document.addEventListener('MSFullscreenChange', fullscreenChange);
-
-function fullscreen() {
-  // check if fullscreen mode is available
-  if (document.fullscreenEnabled || 
-    document.webkitFullscreenEnabled || 
-    document.mozFullScreenEnabled ||
-    document.msFullscreenEnabled) {
-    
-    // which element will be fullscreen
-    var iframe = document.querySelector('#container iframe');
-    // Do fullscreen
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) {
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.mozRequestFullScreen) {
-      iframe.mozRequestFullScreen();
-    } else if (iframe.msRequestFullscreen) {
-      iframe.msRequestFullscreen();
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Big Shot Boxing</title>
+  <meta name="generator" content="Publii Open-Source CMS for Static Site">
+  <link rel="canonical" href="https://bigshotboxing.gitlab.io/">
+  <link rel="alternate" type="application/atom+xml" href="feed.xml">
+  <link rel="alternate" type="application/json" href="feed.json">
+  <meta property="og:title" content="Big Shot Boxing">
+  <meta property="og:site_name" content="Big Shot Boxing">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://bigshotboxing.gitlab.io/">
+  <meta property="og:type" content="website">
+  <link rel="shortcut icon" href="favicon-32x32-2.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=d2371dfda16163cecac185d3a18bdb28">
+  <script type="application/ld+json">
+    {
+      "@context":"http://schema.org",
+      "@type":"Organization",
+      "name":"Big Shot Boxing",
+      "url":"https://bigshotboxing.gitlab.io/"
     }
-  }
-  else {
-    document.querySelector('.error').innerHTML = 'Your browser is not supported';
-  }
-}
+  </script>
+  <noscript><style>img[loading] { opacity: 1; }</style></noscript>
+</head>
+<body>
+  <div class="container">
+    <header class="header" id="js-header">
+      <a href="index.html" class="logo">Big Shot Boxing</a>
+    </header>
+    <main>
+      <div class="hero wrapper">
+        <h1>Big Shot Boxing</h1>
+        <p><br><br></p>
+        <div id="container">
+          <iframe width="600" height="500" onclick="goFullscreen('embededGame')" src="big-shot-boxing.html" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <div align="center"><button class="button">Full Screen</button></div>
+        </div>
+        <script>
+          var button = document.querySelector('#container .button');
+          button.addEventListener('click', fullscreen);
 
-function fullscreenChange() {
-  if (document.fullscreenEnabled ||
-       document.webkitIsFullScreen || 
-       document.mozFullScreen ||
-       document.msFullscreenElement) {
-    console.log('enter fullscreen');
-  }
-  else {
-    console.log('exit fullscreen');
-  }
-  // force to reload iframe once to prevent the iframe source didn't care about trying to resize the window
-  // comment this line and you will see
-  var iframe = document.querySelector('iframe');
-  iframe.src = iframe.src;
-}</script></p></div><nav class="filter"><ul class="filter__button-group"><li><button class="filter__item is-active" data-filter="*">All</button></li></ul></nav><div class="l-col l-col--3"></div></main><footer class="footer"><div class="footer__copyright">Powered by bigshotboxing.gitlab.io</div></footer></div><script defer="defer" src="https://bigshotboxing.gitlab.io/assets/js/scripts.min.js?v=620157e86bfc246cfef480b1b4aadb48"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.navbar'};</script><script defer="defer" src="https://bigshotboxing.gitlab.io/assets/js/isotope.pkgd.min.js?v=2afcff647ed260006faa71c8e779e8d4"></script><script>window.addEventListener("DOMContentLoaded",function(){var j=new Isotope(".l-col",{itemSelector:".c-card",percentPosition:true,layoutMode:"masonry",transitionDuration:"0.6s",masonry:{columnWidth:".c-card"}});var g=document.querySelector(".filter__button-group");if(g){g.addEventListener("click",function(i){if(!matchesSelector(i.target,"button")){return}var k=i.target.getAttribute("data-filter");k=k;j.arrange({filter:k})});var b=document.querySelectorAll(".filter__button-group");for(var c=0,e=b.length;c<e;c++){var d=b[c];h(d)}function h(i){i.addEventListener("click",function(k){if(!matchesSelector(k.target,"button")){return}i.querySelector(".is-active").classList.remove("is-active");k.target.classList.add("is-active")})}}var a=document.querySelector(".l-col");var f=document.querySelectorAll(".c-card");a.classList.add("is-visible");j.revealItemElements(f)});</script><script>/*<![CDATA[*/var images=document.querySelectorAll("img[loading]");for(var i=0;i<images.length;i++){if(images[i].complete){images[i].classList.add("is-loaded")}else{images[i].addEventListener("load",function(){this.classList.add("is-loaded")},false)}};/*]]>*/</script></body></html>
+          document.addEventListener('keydown', function (e) {
+            console.log('key press' + e.keyCode);
+          });
+
+          document.addEventListener('webkitfullscreenchange', fullscreenChange);
+          document.addEventListener('mozfullscreenchange', fullscreenChange);
+          document.addEventListener('fullscreenchange', fullscreenChange);
+          document.addEventListener('MSFullscreenChange', fullscreenChange);
+
+          function fullscreen() {
+            if (document.fullscreenEnabled ||
+                document.webkitFullscreenEnabled ||
+                document.mozFullScreenEnabled ||
+                document.msFullscreenEnabled) {
+
+              var iframe = document.querySelector('#container iframe');
+              if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+              } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+              } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+              } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+              }
+            } else {
+              document.querySelector('.error').innerHTML = 'Your browser is not supported';
+            }
+          }
+
+          function fullscreenChange() {
+            if (document.fullscreenEnabled ||
+                document.webkitIsFullScreen ||
+                document.mozFullScreen ||
+                document.msFullscreenElement) {
+              console.log('enter fullscreen');
+            } else {
+              console.log('exit fullscreen');
+            }
+            var iframe = document.querySelector('iframe');
+            iframe.src = iframe.src;
+          }
+        </script>
+      </div>
+
+      <nav class="filter">
+        <ul class="filter__button-group">
+          <li><button class="filter__item is-active" data-filter="*">All</button></li>
+        </ul>
+      </nav>
+
+      <div class="l-col l-col--3"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__copyright">Powered by bigshotboxing.gitlab.io</div>
+    </footer>
+  </div>
+
+  <script defer src="scripts.min.js?v=620157e86bfc246cfef480b1b4aadb48"></script>
+  <script>
+    window.publiiThemeMenuConfig = {
+      mobileMenuMode: 'sidebar',
+      animationSpeed: 300,
+      submenuWidth: 'auto',
+      doubleClickTime: 500,
+      mobileMenuExpandableSubmenus: true,
+      relatedContainerForOverlayMenuSelector: '.navbar'
+    };
+  </script>
+  <script defer src="isotope.pkgd.min.js?v=2afcff647ed260006faa71c8e779e8d4"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      var j = new Isotope(".l-col", {
+        itemSelector: ".c-card",
+        percentPosition: true,
+        layoutMode: "masonry",
+        transitionDuration: "0.6s",
+        masonry: { columnWidth: ".c-card" }
+      });
+
+      var g = document.querySelector(".filter__button-group");
+      if (g) {
+        g.addEventListener("click", function (i) {
+          if (!matchesSelector(i.target, "button")) { return; }
+          var k = i.target.getAttribute("data-filter");
+          j.arrange({ filter: k });
+        });
+
+        var b = document.querySelectorAll(".filter__button-group");
+        for (var c = 0, e = b.length; c < e; c++) {
+          var d = b[c];
+          h(d);
+        }
+
+        function h(i) {
+          i.addEventListener("click", function (k) {
+            if (!matchesSelector(k.target, "button")) { return; }
+            i.querySelector(".is-active").classList.remove("is-active");
+            k.target.classList.add("is-active");
+          });
+        }
+      }
+
+      var a = document.querySelector(".l-col");
+      var f = document.querySelectorAll(".c-card");
+      a.classList.add("is-visible");
+      j.revealItemElements(f);
+    });
+  </script>
+  <script>
+    var images = document.querySelectorAll("img[loading]");
+    for (var i = 0; i < images.length; i++) {
+      if (images[i].complete) {
+        images[i].classList.add("is-loaded");
+      } else {
+        images[i].addEventListener("load", function () {
+          this.classList.add("is-loaded");
+        }, false);
+      }
+    }
+  </script>
+</body>
+</html>
